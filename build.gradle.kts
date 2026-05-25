@@ -48,7 +48,8 @@ subprojects {
     }
 
     configurations {
-        create("apk")
+        val apk by creating
+        getByName("compileOnly").extendsFrom(apk)
     }
 
     dependencies {
