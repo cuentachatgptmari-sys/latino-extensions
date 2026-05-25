@@ -19,7 +19,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: 8.14.1
+          gradle-version: 7.5.1
 
       - name: Remove wrong apply plugin from all providers
         run: |
@@ -27,6 +27,9 @@ jobs:
             sed -i '/apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")/d' "$f"
             echo "Fixed: $f"
           done
+
+      - name: Give gradlew execute permission
+        run: chmod +x gradlew
 
       - name: Build with Gradle
         run: gradle build
