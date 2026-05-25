@@ -1,31 +1,23 @@
-name: Build and Release
+name: Build
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with:
           java-version: 17
           distribution: temurin
-      - - uses: gradle/actions/setup-gradle@v3
-  with:
-    gradle-version: 8.14.1    
-      - name: Build with Gradle
-        run: gradle make
-      - name: Upload to release
-        uses: softprops/action-gh-release@v1
+
+      - uses: gradle/actions/setup-gradle@v3
         with:
-          tag_name: build
-          files: |
-            **/*.cs3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          gradle-version: 8.14.1
+
+      - name: Build with Gradle
+        run: ./gradlew build
