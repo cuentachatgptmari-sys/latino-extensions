@@ -16,6 +16,7 @@ allprojects {
         mavenCentral()
         maven("https://jitpack.io")
     }
+    apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")
 }
 
 tasks.register<Delete>("clean") {
