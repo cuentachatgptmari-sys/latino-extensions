@@ -1,3 +1,5 @@
+apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")
+
 version = 1
 
 cloudstream {
