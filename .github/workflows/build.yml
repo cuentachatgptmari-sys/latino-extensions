@@ -16,10 +16,11 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+      - uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: 8.0
       - name: Build with Gradle
-        run: |
-          chmod +x gradlew
-          ./gradlew make
+        run: gradle make
       - name: Upload to release
         uses: softprops/action-gh-release@v1
         with:
