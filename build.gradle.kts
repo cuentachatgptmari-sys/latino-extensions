@@ -47,6 +47,10 @@ subprojects {
         }
     }
 
+    configurations {
+        create("apk")
+    }
+
     dependencies {
         val apk by configurations
         val implementation by configurations
