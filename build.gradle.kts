@@ -8,9 +8,9 @@ buildscript {
         maven("https://jitpack.io")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath("com.android.tools.build:gradle:7.4.2")
         classpath("com.github.recloudstream:gradle:master-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
     }
 }
 
@@ -35,11 +35,11 @@ subprojects {
     }
 
     android {
-        compileSdkVersion(33)
+        compileSdkVersion(34)
         namespace = "com.lagradost.${project.name.toLowerCase()}"
         defaultConfig {
             minSdk = 21
-            targetSdk = 33
+            targetSdk = 34
         }
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_1_8
