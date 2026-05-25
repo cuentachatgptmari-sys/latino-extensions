@@ -16,6 +16,9 @@ allprojects {
         mavenCentral()
         maven("https://jitpack.io")
     }
+}
+
+subprojects {
     apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")
 }
 
