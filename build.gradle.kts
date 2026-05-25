@@ -36,7 +36,7 @@ subprojects {
 
     android {
         compileSdkVersion(33)
-        namespace = "com.lagradost.${project.name.lowercase()}"
+        namespace = "com.lagradost.${project.name.toLowerCase()}"
         defaultConfig {
             minSdk = 21
             targetSdk = 33
