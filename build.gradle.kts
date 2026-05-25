@@ -19,8 +19,7 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
-        maven {
-            url = uri("https://maven.pkg.github.com/recloudstream/cloudstream")
+        maven("https://maven.pkg.github.com/recloudstream/cloudstream") {
             credentials {
                 username = System.getenv("GITHUB_ACTOR") ?: ""
                 password = System.getenv("GITHUB_TOKEN") ?: ""
