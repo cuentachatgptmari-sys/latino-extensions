@@ -44,15 +44,6 @@ subprojects {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
-        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-            kotlinOptions {
-                jvmTarget = "1.8"
-                freeCompilerArgs = freeCompilerArgs +
-                    "-Xno-call-assertions" +
-                    "-Xno-param-assertions" +
-                    "-Xno-receiver-assertions"
-            }
-        }
     }
 
     dependencies {
@@ -63,33 +54,6 @@ subprojects {
         implementation("com.github.Blatzar:NiceHttp:0.4.1")
         implementation("org.jsoup:jsoup:1.15.3")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
-    }
-}
-
-task<Delete>("clean") {
-    delete(rootProject.buildDir)
-}
-        setRepo(System.getenv("GITHUB_REPOSITORY") ?: "https://github.com/cuentachatgptmari-sys/latino-extensions")
-    }
-
-    android {
-        compileSdkVersion(33)
-        defaultConfig {
-            minSdk = 21
-            targetSdk = 33
-        }
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
-        }
-    }
-
-    dependencies {
-        val implementation by configurations
-        implementation("com.github.Blatzar:NiceHttp:0.4.11")
-        implementation("org.jsoup:jsoup:1.16.1")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
-        implementation(kotlin("stdlib"))
     }
 }
 
