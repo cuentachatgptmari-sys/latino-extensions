@@ -1,3 +1,5 @@
+apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")
+
 version = 1
 
 cloudstream {
@@ -8,3 +10,7 @@ cloudstream {
     tvTypes = listOf("Movie", "TvSeries")
     iconUrl = "https://cliver.mom/favicon.ico"
 }
+
+
+
+
