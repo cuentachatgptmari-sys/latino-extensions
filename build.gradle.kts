@@ -8,7 +8,7 @@ buildscript {
         maven("https://jitpack.io")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("com.android.tools.build:gradle:8.2.2")
         classpath("com.github.recloudstream:gradle:master-SNAPSHOT")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
     }
@@ -19,6 +19,13 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven {
+            url = uri("https://maven.pkg.github.com/recloudstream/cloudstream")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: ""
+            }
+        }
     }
 }
 
@@ -36,14 +43,14 @@ subprojects {
 
     android {
         compileSdkVersion(34)
-        namespace = "com.lagradost.${project.name.toLowerCase()}"
+        namespace = "com.lagradost.${project.name.lowercase()}"
         defaultConfig {
             minSdk = 21
             targetSdk = 34
         }
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
     }
 
@@ -58,8 +65,8 @@ subprojects {
         apk("com.lagradost:cloudstream3:pre-release")
         implementation(kotlin("stdlib"))
         implementation("com.github.Blatzar:NiceHttp:0.4.11")
-        implementation("org.jsoup:jsoup:1.15.3")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
+        implementation("org.jsoup:jsoup:1.16.1")
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
     }
 }
 
