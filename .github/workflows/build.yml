@@ -21,6 +21,15 @@ jobs:
         with:
           gradle-version: 8.14.1
 
+      - name: Fix provider build files
+        run: |
+          for f in $(find . -path "./.git" -prune -o -name "build.gradle.kts" -print | grep -v "^\./build.gradle.kts$"); do
+            if grep -q "cloudstream {" "$f" && ! grep -q "apply(plugin" "$f"; then
+              sed -i '1s/^/apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")\n\n/' "$f"
+              echo "Fixed: $f"
+            fi
+          done
+
       - name: Build with Gradle
         run: gradle build
 
