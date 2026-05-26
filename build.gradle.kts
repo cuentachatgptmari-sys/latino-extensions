@@ -19,6 +19,12 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven("https://maven.pkg.github.com/recloudstream/cloudstream") {
+            credentials {
+                username = System.getenv("PKG_ACTOR") ?: System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("PKG_TOKEN") ?: System.getenv("GITHUB_TOKEN") ?: ""
+            }
+        }
     }
 }
 
@@ -49,14 +55,14 @@ subprojects {
     }
 
     configurations {
-        val apk by creating
-        getByName("compileOnly").extendsFrom(apk)
+        val apk = maybeCreate("apk")
+        maybeCreate("compileOnly").extendsFrom(apk)
     }
 
     dependencies {
         val apk by configurations
         val implementation by configurations
-        apk("com.github.recloudstream:cloudstream:pre-release")
+        apk("com.lagradost:cloudstream3:pre-release")
         implementation(kotlin("stdlib"))
         implementation("com.github.Blatzar:NiceHttp:0.4.11")
         implementation("org.jsoup:jsoup:1.16.1")
