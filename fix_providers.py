@@ -5,6 +5,7 @@ def fix_kt_file(filepath):
     with open(filepath, 'r') as f:
         content = f.read()
 
+    # Skip plugin files already
     if '@CloudstreamPlugin' in content:
         return
 
@@ -13,37 +14,40 @@ def fix_kt_file(filepath):
         return
     classname = match.group(1)
 
-    # Remove hasSearch line
+    # Get package line
+    pkg_match = re.search(r'^(package .+)', content, re.MULTILINE)
+    package_line = pkg_match.group(1) if pkg_match else 'package com.latino'
+
+    # Remove hasSearch line from main file
     content = re.sub(r'.*override val hasSearch.*\n', '', content)
 
-    # Insert plugin imports and class right before the main class definition
-    plugin_block = (
-        "import com.lagradost.cloudstream3.plugins.CloudstreamPlugin\n"
-        "import com.lagradost.cloudstream3.plugins.Plugin\n"
-        "import android.content.Context\n\n"
-        "@CloudstreamPlugin\n"
-        f"class {classname}Plugin : Plugin() {{\n"
-        f"    override fun load(context: Context) {{\n"
-        f"        registerMainAPI({classname}())\n"
-        "    }\n"
-        "}\n\n"
-    )
-
-    # Insert plugin block right before "class XxxProvider"
-    content = re.sub(
-        r'(class ' + classname + r'\s*:)',
-        plugin_block + r'class ' + classname + r' :',
-        content
-    )
-
+    # Write cleaned main file
     with open(filepath, 'w') as f:
         f.write(content)
-    print(f"Fixed: {filepath}")
+
+    # Create separate Plugin file next to the main file
+    plugin_filepath = os.path.join(os.path.dirname(filepath), f'{classname}Plugin.kt')
+    if not os.path.exists(plugin_filepath):
+        plugin_content = (
+            f"{package_line}\n\n"
+            "import com.lagradost.cloudstream3.plugins.CloudstreamPlugin\n"
+            "import com.lagradost.cloudstream3.plugins.Plugin\n"
+            "import android.content.Context\n\n"
+            "@CloudstreamPlugin\n"
+            f"class {classname}Plugin : Plugin() {{\n"
+            f"    override fun load(context: Context) {{\n"
+            f"        registerMainAPI({classname}())\n"
+            "    }\n"
+            "}\n"
+        )
+        with open(plugin_filepath, 'w') as f:
+            f.write(plugin_content)
+        print(f"Created plugin file: {plugin_filepath}")
 
 for root, dirs, files in os.walk('.'):
     dirs[:] = [d for d in dirs if d != '.git']
     for file in files:
-        if file.endswith('.kt'):
+        if file.endswith('.kt') and not file.endswith('Plugin.kt'):
             fix_kt_file(os.path.join(root, file))
 
 print("Done!")
