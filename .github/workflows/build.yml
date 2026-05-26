@@ -28,7 +28,11 @@ jobs:
         run: |
           find . -not -path "./.git/*" -name "build.gradle.kts" ! -path "./build.gradle.kts" | while read f; do
             sed -i '/apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")/d' "$f"
-            echo "Fixed: $f"
+            echo "Fixed gradle: $f"
+          done
+          find . -not -path "./.git/*" -name "*.kt" | while read f; do
+            sed -i '/override val hasSearch/d' "$f"
+            echo "Fixed kt: $f"
           done
 
       - name: Build with Gradle
