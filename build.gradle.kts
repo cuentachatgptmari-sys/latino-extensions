@@ -60,8 +60,9 @@ subprojects {
     }
 
     dependencies {
+        val apk by configurations
         val implementation by configurations
-        implementation("com.github.recloudstream.cloudstream:library:-SNAPSHOT")
+        apk("com.github.recloudstream:cloudstream:-SNAPSHOT")
         implementation(kotlin("stdlib"))
         implementation("com.github.Blatzar:NiceHttp:0.4.11")
         implementation("org.jsoup:jsoup:1.18.3")
