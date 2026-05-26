@@ -10,8 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      PKG_TOKEN: ${{ secrets.GH_TOKEN }}
-      PKG_ACTOR: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_ACTOR: ${{ github.actor }}
     steps:
       - uses: actions/checkout@v4
 
@@ -22,18 +22,14 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: 7.5.1
+          gradle-version: 8.9
 
       - name: Fix provider build files
         run: |
           find . -not -path "./.git/*" -name "build.gradle.kts" ! -path "./build.gradle.kts" | while read f; do
             sed -i '/apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")/d' "$f"
-            sed -i '/apply(plugin = "com.lagradost.cloudstream3.gradle")/d' "$f"
             echo "Fixed: $f"
           done
-
-      - name: Give gradlew execute permission
-        run: chmod +x gradlew
 
       - name: Build with Gradle
         run: gradle build
