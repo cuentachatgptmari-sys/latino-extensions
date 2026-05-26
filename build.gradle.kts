@@ -42,11 +42,11 @@ subprojects {
     }
 
     android {
-        compileSdkVersion(33)
-        namespace = "com.lagradost.${project.name.toLowerCase()}"
+        compileSdkVersion(35)
+        namespace = "recloudstream"
         defaultConfig {
             minSdk = 21
-            targetSdk = 33
+            targetSdk = 35
         }
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_1_8
@@ -69,7 +69,7 @@ subprojects {
         apk("com.lagradost:cloudstream3:pre-release")
         implementation(kotlin("stdlib"))
         implementation("com.github.Blatzar:NiceHttp:0.4.11")
-        implementation("org.jsoup:jsoup:1.15.3")
+        implementation("org.jsoup:jsoup:1.18.3")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
     }
 }
