@@ -9,7 +9,6 @@ class CinecalidadProvider : MainAPI() {
     override var name = "Cinecalidad"
     override var lang = "es"
     override val hasMainPage = true
-    override val hasSearch = true
     override val supportedTypes = setOf(TvType.Movie, TvType.TvSeries)
 
     override suspend fun getMainPage(page: Int, request: MainPageRequest): HomePageResponse {
