@@ -1,0 +1,401 @@
+[
+    {
+        "iconUrl": "https://cinecalidad.am/favicon.ico",
+        "fileHash": "sha256-09b1620d23ca197ef4d657ae74c2413d2c4b8f7b2829410201c9ccae062aec3d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8383,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "CinecalidadProvider",
+        "description": "Peliculas y series en HD y 4K latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/CinecalidadProvider.cs3",
+        "name": "CinecalidadProvider"
+    },
+    {
+        "iconUrl": "https://cliver.mom/favicon.ico",
+        "fileHash": "sha256-510181171b3898ec651256ac16b72d611910fff9fb952479a8f993858f075056",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8363,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "CliverProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/CliverProvider.cs3",
+        "name": "CliverProvider"
+    },
+    {
+        "iconUrl": "https://coflix.tv/favicon.ico",
+        "fileHash": "sha256-1cc3eb87bc8a997ce8c8f6778568b845ca3a137832ecc6ebcd0ae6fc0c2df5ba",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8369,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "CoflixProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/CoflixProvider.cs3",
+        "name": "CoflixProvider"
+    },
+    {
+        "iconUrl": "https://cuevana3espanol.online/favicon.ico",
+        "fileHash": "sha256-2489cb921298aaa32d90081f1ce81c63d616f1cc2961b268a3f5d40d874e5f12",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8383,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "Cuevana3Provider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/Cuevana3Provider.cs3",
+        "name": "Cuevana3Provider"
+    },
+    {
+        "iconUrl": "https://filmapik.my.id/favicon.ico",
+        "fileHash": "sha256-67b644b37e859d4de6953453de3e1cfb995bdfde856b25457a674126bc2ddf75",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8372,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "FilmapikProvider",
+        "description": "Peliculas en HD en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/FilmapikProvider.cs3",
+        "name": "FilmapikProvider"
+    },
+    {
+        "iconUrl": "https://gnula.nu/favicon.ico",
+        "fileHash": "sha256-4ee540bb3677d6922f7fec962a85bb9e61a61e00045f2a8e06e9d4c6b7204d25",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8349,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "GnulaProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/GnulaProvider.cs3",
+        "name": "GnulaProvider"
+    },
+    {
+        "iconUrl": "https://goojara.to/favicon.ico",
+        "fileHash": "sha256-f1b32931447c8c98788e3770838872f0945ca6997a776ebbb2d29abf87608183",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8376,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "GoojaraProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/GoojaraProvider.cs3",
+        "name": "GoojaraProvider"
+    },
+    {
+        "iconUrl": "https://idlix.asia/favicon.ico",
+        "fileHash": "sha256-c9f9098fa226e5e15690de52a1a07941205fa9debc974454549e43cb2eaed1a5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8361,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "IdlixProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/IdlixProvider.cs3",
+        "name": "IdlixProvider"
+    },
+    {
+        "iconUrl": "https://la.movie/favicon.ico",
+        "fileHash": "sha256-b42ccf7ceff5a39791ce32cece64d999c7e9638d5714c1a1e3aaa14b5b3809e8",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8367,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "LaMovieProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/LaMovieProvider.cs3",
+        "name": "LaMovieProvider"
+    },
+    {
+        "iconUrl": "https://latanime.org/favicon.ico",
+        "fileHash": "sha256-ff4369504e6c994164ca9c50f8914f0832522ec89260951f5a2b93a358beb8fa",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8377,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Anime",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "LatanimeProvider",
+        "description": "Anime en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/LatanimeProvider.cs3",
+        "name": "LatanimeProvider"
+    },
+    {
+        "iconUrl": "https://megadede.mobi/favicon.ico",
+        "fileHash": "sha256-2cfa23befbc1adda99b721ebcf3e191f6d30c4f8e8e5feee27e7f888d1ead806",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8367,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "MegadedeProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/MegadedeProvider.cs3",
+        "name": "MegadedeProvider"
+    },
+    {
+        "iconUrl": "https://netcinez.com/favicon.ico",
+        "fileHash": "sha256-63da5e0c5972a80b2dc8198bed092bc9c38903ca8255430cc778cde888e08c4d",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8371,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "NetcinezProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/NetcinezProvider.cs3",
+        "name": "NetcinezProvider"
+    },
+    {
+        "iconUrl": "https://pelicinehd.com/favicon.ico",
+        "fileHash": "sha256-5b49afa5959a20be29990e1cfccd888898dc82fb131f74bf4a020cc3a174a749",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8392,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "PeliCineHDProvider",
+        "description": "Peliculas y series HD en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/PeliCineHDProvider.cs3",
+        "name": "PeliCineHDProvider"
+    },
+    {
+        "iconUrl": "https://pelisplushd.lat/favicon.ico",
+        "fileHash": "sha256-626424b281609be34365d6cb9775c2573f17a1e6944a99f7784f7de45de99c56",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8391,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "Pelisplush\u0434Provider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/Pelisplush\u0434Provider.cs3",
+        "name": "Pelisplush\u0434Provider"
+    },
+    {
+        "iconUrl": "https://pelisplus.ac/favicon.ico",
+        "fileHash": "sha256-9279dbb0b07b9af27f0311f4754822a5732f36dc8e6390c0f8d74a7bab4d8281",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8382,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "PelisplusProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/PelisplusProvider.cs3",
+        "name": "PelisplusProvider"
+    },
+    {
+        "iconUrl": "https://repelisplus.com/favicon.ico",
+        "fileHash": "sha256-9c1770b63e938da0c64148a9952fc0b82609d605d6093cb092f817e68dcf7ee5",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8387,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "RepelisplusProvider",
+        "description": "Peliculas y series en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/RepelisplusProvider.cs3",
+        "name": "RepelisplusProvider"
+    },
+    {
+        "iconUrl": "https://series24.one/favicon.ico",
+        "fileHash": "sha256-150c8c04abbe972032f0b54f14eac8b93f03a645aaddc9d29658aae91f4d0151",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8371,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "Series24Provider",
+        "description": "Series y peliculas en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/Series24Provider.cs3",
+        "name": "Series24Provider"
+    },
+    {
+        "iconUrl": "https://seriesdanko.to/favicon.ico",
+        "fileHash": "sha256-4b75761aa38edfa6c68e3ede345e5ca86811049bdb009ed2902650c6168acff8",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8384,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "SeriesdankoProvider",
+        "description": "Series completas en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/SeriesdankoProvider.cs3",
+        "name": "SeriesdankoProvider"
+    },
+    {
+        "iconUrl": "https://topstreamfilm.com/favicon.ico",
+        "fileHash": "sha256-7f5488150e85433cb6378f616e0c45065ef122ca3fc98083f591735d7a4d4405",
+        "apiVersion": 1,
+        "repositoryUrl": "https://github.com/cuentachatgptmari-sys/latino-extensions",
+        "fileSize": 8383,
+        "status": 1,
+        "language": "es",
+        "authors": [
+            "cuentachatgptmari-sys"
+        ],
+        "tvTypes": [
+            "Movie",
+            "TvSeries"
+        ],
+        "version": 1,
+        "internalName": "TopstreamfilmProvider",
+        "description": "Peliculas HD en espa\u00f1ol latino",
+        "url": "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/TopstreamfilmProvider.cs3",
+        "name": "TopstreamfilmProvider"
+    }
+]

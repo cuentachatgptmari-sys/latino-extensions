@@ -1,0 +1,8 @@
+{
+  "name": "Latino Extensions",
+  "description": "19 extensiones de peliculas y series en espanol latino",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/cuentachatgptmari-sys/latino-extensions/builds/plugins.json"
+  ]
+}
