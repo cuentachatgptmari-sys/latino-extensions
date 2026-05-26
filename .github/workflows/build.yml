@@ -36,10 +36,10 @@ jobs:
           done
 
       - name: Build with Gradle
-        run: gradle build
+        run: gradle makePlugins
 
       - name: Upload plugins
         uses: actions/upload-artifact@v4
         with:
           name: plugins
-          path: "**/build/outputs/**/*.cs3"
+          path: "**/*.cs3"
