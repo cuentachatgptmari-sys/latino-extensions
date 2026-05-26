@@ -26,13 +26,44 @@ jobs:
 
       - name: Fix provider build files
         run: |
+          # Eliminar apply incorrecto de build.gradle.kts
           find . -not -path "./.git/*" -name "build.gradle.kts" ! -path "./build.gradle.kts" | while read f; do
             sed -i '/apply(plugin = "com.lagradost.cloudstream3.cloudstreamPlugin")/d' "$f"
-            echo "Fixed gradle: $f"
           done
+
+          # Eliminar hasSearch de todos los .kt
           find . -not -path "./.git/*" -name "*.kt" | while read f; do
             sed -i '/override val hasSearch/d' "$f"
-            echo "Fixed kt: $f"
+          done
+
+          # Agregar @CloudstreamPlugin a todos los .kt que no lo tengan
+          find . -not -path "./.git/*" -name "*.kt" | while read f; do
+            if ! grep -q "@CloudstreamPlugin" "$f"; then
+              # Obtener nombre de la clase principal
+              CLASSNAME=$(grep -o 'class [A-Za-z0-9]*Provider' "$f" | head -1 | awk '{print $2}')
+              if [ -n "$CLASSNAME" ]; then
+                PACKAGE=$(grep '^package' "$f")
+                # Reescribir el archivo con la estructura correcta
+                CONTENT=$(cat "$f")
+                cat > "$f" << KOTLIN
+$PACKAGE
+
+import com.lagradost.cloudstream3.plugins.CloudstreamPlugin
+import com.lagradost.cloudstream3.plugins.Plugin
+import android.content.Context
+
+@CloudstreamPlugin
+class ${CLASSNAME}Plugin : Plugin() {
+    override fun load(context: Context) {
+        registerMainAPI(${CLASSNAME}())
+    }
+}
+
+$(echo "$CONTENT" | grep -v '^package ')
+KOTLIN
+                echo "Fixed @CloudstreamPlugin: $f"
+              fi
+            fi
           done
 
       - name: Build with Gradle
