@@ -20,7 +20,7 @@ def fix_kt_file(filepath):
     # 1. Eliminar línea hasSearch
     content = re.sub(r'[ \t]*override val hasSearch\s*=\s*(true|false)[ \t]*\n', '', content)
 
-    # 2. Separar imports existentes del resto del código
+    # 2. Separar imports/package del resto del código
     lines = content.split('\n')
     import_lines = []
     other_lines = []
@@ -43,11 +43,12 @@ def fix_kt_file(filepath):
         if imp not in existing_imports:
             import_lines.append(imp)
 
-    # 4. Construir bloque @CloudstreamPlugin con BasePlugin (NO Plugin de Android)
+    # 4. Construir bloque @CloudstreamPlugin con BasePlugin
+    #    IMPORTANTE: override fun load() SIN parámetros (así es BasePlugin)
     plugin_block = (
         f"\n@CloudstreamPlugin\n"
         f"class {classname}Plugin : BasePlugin() {{\n"
-        f"    override fun load(context: android.content.Context) {{\n"
+        f"    override fun load() {{\n"
         f"        registerMainAPI({classname}())\n"
         f"    }}\n"
         f"}}\n"
