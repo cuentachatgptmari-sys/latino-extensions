@@ -8,9 +8,9 @@ buildscript {
         maven("https://jitpack.io")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("com.android.tools.build:gradle:7.0.4")
         classpath("com.github.recloudstream:gradle:master-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10")
     }
 }
 
@@ -19,12 +19,6 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
-        maven("https://maven.pkg.github.com/recloudstream/cloudstream") {
-            credentials {
-                username = System.getenv("PKG_ACTOR") ?: System.getenv("GITHUB_ACTOR") ?: ""
-                password = System.getenv("PKG_TOKEN") ?: System.getenv("GITHUB_TOKEN") ?: ""
-            }
-        }
     }
 }
 
@@ -41,32 +35,26 @@ subprojects {
     }
 
     android {
-        compileSdkVersion(34)
-        @Suppress("DEPRECATION")
+        compileSdkVersion(33)
         namespace = "com.lagradost.${project.name.toLowerCase()}"
         defaultConfig {
             minSdk = 21
-            targetSdk = 34
+            targetSdk = 33
         }
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_11
-            targetCompatibility = JavaVersion.VERSION_11
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
         }
-    }
-
-    configurations {
-        val apk = maybeCreate("apk")
-        maybeCreate("compileOnly").extendsFrom(apk)
     }
 
     dependencies {
         val apk by configurations
         val implementation by configurations
-        apk("com.lagradost:cloudstream3:pre-release")
+        apk("com.github.recloudstream:cloudstream:master-SNAPSHOT")
         implementation(kotlin("stdlib"))
         implementation("com.github.Blatzar:NiceHttp:0.4.11")
-        implementation("org.jsoup:jsoup:1.16.1")
-        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2")
+        implementation("org.jsoup:jsoup:1.15.3")
+        implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1")
     }
 }
 
