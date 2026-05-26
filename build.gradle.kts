@@ -19,6 +19,13 @@ allprojects {
         google()
         mavenCentral()
         maven("https://jitpack.io")
+        maven {
+            url = uri("https://maven.pkg.github.com/recloudstream/cloudstream")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: ""
+            }
+        }
     }
 }
 
@@ -45,12 +52,21 @@ subprojects {
             sourceCompatibility = JavaVersion.VERSION_1_8
             targetCompatibility = JavaVersion.VERSION_1_8
         }
+        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+            kotlinOptions {
+                jvmTarget = "1.8"
+                freeCompilerArgs = freeCompilerArgs +
+                    "-Xno-call-assertions" +
+                    "-Xno-param-assertions" +
+                    "-Xno-receiver-assertions"
+            }
+        }
     }
 
     dependencies {
         val apk by configurations
         val implementation by configurations
-        apk("com.github.recloudstream:cloudstream:master-SNAPSHOT")
+        apk("com.lagradost:cloudstream3:pre-release")
         implementation(kotlin("stdlib"))
         implementation("com.github.Blatzar:NiceHttp:0.4.11")
         implementation("org.jsoup:jsoup:1.15.3")
