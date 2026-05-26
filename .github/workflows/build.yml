@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GITHUB_ACTOR: ${{ github.actor }}
@@ -48,7 +50,7 @@ jobs:
           git checkout -b builds
           git add .
           git commit -m "Build ${{ github.sha }}"
-          git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/cuentachatgptmari-sys/latino-extensions.git" builds
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/cuentachatgptmari-sys/latino-extensions.git" builds
 
       - name: Upload plugins artifact
         uses: actions/upload-artifact@v4
