@@ -1,6 +1,18 @@
 import os
 import re
 
+# Providers que ya tienen su @CloudstreamPlugin correcto — NO tocar
+# Estos usan Plugin() con Context (arquitectura Phisher), no BasePlugin()
+SKIP_PACKAGES = [
+    'package com.latino\n\nimport com.lagradost.cloudstream3.plugins.CloudstreamPlugin\nimport com.lagradost.cloudstream3.plugins.Plugin',
+]
+
+# Carpetas a omitir completamente
+SKIP_DIRS = [
+    'PelisplushдProvider',
+    'LaMovieProvider',  # ya tiene código real con @CloudstreamPlugin
+]
+
 def fix_kt_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -8,6 +20,11 @@ def fix_kt_file(filepath):
     # Si ya tiene @CloudstreamPlugin, no tocar
     if '@CloudstreamPlugin' in content:
         print(f"Already fixed: {filepath}")
+        return
+
+    # Si usa Plugin() con Context (arquitectura Phisher), no tocar
+    if 'plugins.Plugin' in content and 'override fun load(context: Context)' in content:
+        print(f"Phisher-style plugin, skipping: {filepath}")
         return
 
     # Buscar el nombre de la clase Provider
@@ -33,7 +50,7 @@ def fix_kt_file(filepath):
             in_imports = False
             other_lines.append(line)
 
-    # 3. Agregar los imports necesarios si no están ya
+    # 3. Agregar imports necesarios si no están
     needed_imports = [
         'import com.lagradost.cloudstream3.plugins.CloudstreamPlugin',
         'import com.lagradost.cloudstream3.plugins.BasePlugin',
@@ -44,7 +61,7 @@ def fix_kt_file(filepath):
             import_lines.append(imp)
 
     # 4. Construir bloque @CloudstreamPlugin con BasePlugin
-    #    IMPORTANTE: override fun load() SIN parámetros (así es BasePlugin)
+    # IMPORTANTE: override fun load() SIN parámetros
     plugin_block = (
         f"\n@CloudstreamPlugin\n"
         f"class {classname}Plugin : BasePlugin() {{\n"
@@ -63,7 +80,7 @@ def fix_kt_file(filepath):
         count=1
     )
 
-    # 6. Reconstruir archivo: imports primero, luego el resto
+    # 6. Reconstruir: imports primero, luego el resto
     final_content = '\n'.join(import_lines) + '\n' + other_content
 
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -72,7 +89,13 @@ def fix_kt_file(filepath):
 
 # Recorrer todos los .kt del proyecto
 for root, dirs, files in os.walk('.'):
+    # Omitir dirs de git y build
     dirs[:] = [d for d in dirs if d not in ('.git', 'build')]
+
+    # Omitir carpetas de providers ya gestionados
+    if any(skip in root for skip in SKIP_DIRS):
+        continue
+
     for file in files:
         if file.endswith('.kt'):
             fix_kt_file(os.path.join(root, file))
